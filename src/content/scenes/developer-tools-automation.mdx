@@ -1,0 +1,83 @@
+---
+title: "Developer Tools: Code Review and DevOps Automation"
+titleZh: "开发者工具：代码审查与DevOps自动化"
+type: "scene"
+tool: "openclaw"
+industry: "developer-tools"
+date: "2026-03-05"
+tags: ["developer-tools", "code-review", "devops", "automation"]
+---
+
+## Overview
+
+This scene solution covers how development teams can use OpenClaw to automate code reviews, CI/CD pipelines, and routine DevOps tasks. Designed for small to mid-sized engineering teams who want to ship faster without sacrificing quality.
+
+## Use Case 1: Automated Code Review
+
+### Setup
+
+Configure the **Code Skill** to review every pull request automatically:
+
+- **Style compliance** — Check against your team's coding standards
+- **Bug detection** — Identify common patterns that lead to bugs
+- **Security scanning** — Flag potential vulnerabilities (SQL injection, XSS, etc.)
+- **Performance analysis** — Spot N+1 queries, memory leaks, and unnecessary re-renders
+- **Test coverage** — Verify new code has adequate test coverage
+
+### How It Works
+
+- Developer opens a PR on GitHub
+- OpenClaw agent is triggered via webhook
+- Agent analyzes the diff and posts comments directly on the PR
+- Critical issues block the merge; suggestions are non-blocking
+- Human reviewer focuses on architecture and business logic (the interesting stuff)
+
+## Use Case 2: Incident Response Automation
+
+### Setup
+
+Connect the **Monitoring Skill** to your alerting system:
+
+- PagerDuty or Opsgenie integration for alert routing
+- Automatic log analysis when an alert fires
+- Root cause hypothesis generation based on recent deployments
+- Runbook execution for common incidents
+
+### Workflow
+
+- Alert fires (e.g., error rate spike)
+- Agent pulls relevant logs and metrics from the last 30 minutes
+- Compares against recent deployments to identify potential causes
+- Posts a summary in Slack with recommended actions
+- For known issues, executes the runbook automatically (e.g., restart service, scale up)
+
+## Use Case 3: Documentation Generation
+
+Keep your docs up to date automatically:
+
+- **API documentation** — Generated from code comments and type definitions
+- **Changelog** — Compiled from PR titles and commit messages
+- **Architecture diagrams** — Updated when new services or dependencies are added
+- **Onboarding guides** — Refreshed when setup steps change
+
+## Skills Used
+
+- **Code Skill** — Code analysis and review
+- **Browser Skill** — GitHub and CI/CD platform integration
+- **Notification Skill** — Slack and PagerDuty alerts
+- **Knowledge Base Skill** — Documentation storage and retrieval
+
+## Tips for Success
+
+- Start with code review automation — it has the highest ROI and lowest risk
+- Always allow developers to override the AI reviewer's suggestions
+- Tune the sensitivity gradually — start strict, then relax rules that cause too many false positives
+- Use the agent's suggestions as learning opportunities for junior developers
+- Keep humans in the loop for architectural decisions
+
+## Expected Impact
+
+- 60% reduction in time spent on code reviews
+- 40% faster incident response (MTTR)
+- Documentation stays up-to-date without dedicated effort
+- Developers focus on creative problem-solving instead of routine checks
