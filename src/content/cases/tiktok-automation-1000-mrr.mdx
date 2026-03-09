@@ -5,8 +5,8 @@ type: "case"
 tool: "openclaw"
 industry: "content"
 income: 1000
-person: "@oliverhenry"
-source: "https://x.com/oliverhenry"
+person: "Oliver Henry"
+source: "https://wealthytent.com/openclaw-ai-agent"
 date: "2026-02-15"
 replicability: 4
 tags: ["tiktok", "automation", "content-creation"]
@@ -14,30 +14,20 @@ tags: ["tiktok", "automation", "content-creation"]
 
 ## The Story
 
-Oliver Henry is a solo creator who wanted to scale his TikTok presence without spending 8 hours a day editing videos. He built a TikTok automation agent using OpenClaw's **Browser Skill** and **Content Skill** in just one weekend.
+Oliver Henry, an independent developer, created an AI agent named Larry to fully automate TikTok short-form video content. The entire system ran on OpenClaw deployed on an old gaming PC — no cloud infrastructure required. Larry's job was to generate, publish, and optimize viral content around the clock with minimal human oversight. Henry later open-sourced the Larry Skill on ClawHub, OpenClaw's official marketplace.
 
 ## How It Works
 
-The agent follows a simple 3-step pipeline:
+Larry's pipeline combines three specialized tools orchestrated through OpenClaw:
 
-- **Step 1: Trend Discovery** — The Browser Skill scans trending topics on TikTok, Twitter, and Reddit every 6 hours, extracting viral hooks and formats.
-- **Step 2: Script Generation** — The Content Skill takes trending topics and generates 10-15 short video scripts daily, each optimized for TikTok's algorithm with hooks in the first 2 seconds.
-- **Step 3: Batch Publishing** — Scripts are paired with stock footage and auto-published on a schedule, 4-5 videos per day across 3 accounts.
+- **gpt-image-1.5** — Generates photo-realistic slideshow content for TikTok videos. Rather than using stock footage or screen recordings, Larry creates original visual assets that match trending formats and topics.
+- **Postiz** — Handles social media scheduling and distribution. Larry uses the Postiz API to automatically upload finished content to TikTok's draft queue, where it can be reviewed or published directly on schedule.
+- **RevenueCat** — Tracks daily MRR changes from subscription revenue tied to Larry's content accounts. The agent uses this revenue data to adjust its content strategy, doubling down on formats and topics that drive the most subscriber conversions.
 
 ## Results
 
-Within 5 days of launching:
-
-- **500,000+ total views** across all accounts
-- **12,000 new followers** gained organically
-- **$1,000 MRR** from TikTok Creator Fund + affiliate links in bio
-- Time spent dropped from **40 hours/week to 3 hours/week** (just reviewing scripts)
+Within five days of launching, Larry had generated between $714 and $1,000 in monthly recurring revenue and accumulated over 500,000 TikTok views. The growth continued to accelerate — in subsequent weeks, Larry's content was reaching approximately 8 million views per week. The revenue came from a combination of TikTok's creator monetization programs and subscription products promoted through the content.
 
 ## Key Takeaways
 
-> "The secret is not just automation — it's that OpenClaw's Content Skill actually understands what makes a TikTok hook work. I was skeptical, but the engagement rates are 3x what I got manually."
-
-- Start with one niche before scaling to multiple accounts
-- Always review scripts before publishing — the AI is good but not perfect
-- Reinvest early revenue into better stock footage libraries
-- Replicability: **4/5** — Requires basic understanding of TikTok trends but no coding skills
+The Larry case demonstrates a pattern that is becoming common in the OpenClaw ecosystem: combining a content generation model, a distribution API, and a revenue tracking tool into a self-optimizing loop. The agent does not just create and post — it measures what works financially and adjusts accordingly. Henry's decision to open-source the Larry Skill means others can replicate or modify the approach. Replicability is rated 4 out of 5 — the tools are accessible and the pattern is well-documented, though achieving viral reach still depends on content quality and niche selection.

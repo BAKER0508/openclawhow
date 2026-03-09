@@ -1,0 +1,29 @@
+---
+title: "Gave an AI Bot $1,000, It Made $14,718 in 3 Weeks"
+titleZh: "给AI机器人1000美元启动资金，3周赚回14718美元"
+type: "case"
+tool: "openclaw"
+industry: "saas"
+income: 14718
+person: "Nat Eliason"
+source: "https://creatoreconomy.so/p/use-openclaw-to-build-a-business-that-runs-itself-nat-eliason"
+date: "2026-02-20"
+replicability: 3
+tags: ["autonomous-business", "bot", "passive-income"]
+---
+
+## The Experiment
+
+Nat Eliason, a well-known creator and host of the Behind the Craft podcast, set out to answer a provocative question: can an AI bot build and run a profitable business on its own? He gave an OpenClaw bot — named Felix — a $1,000 budget and three weeks to prove itself. Felix was tasked with building websites, creating and selling information products, and running an X (Twitter) account, all with minimal human intervention.
+
+## The Architecture
+
+The system behind Felix was more sophisticated than a simple chatbot. Eliason designed a three-layer memory system consisting of a knowledge graph, daily notes, and an implicit knowledge store, giving Felix persistent context across sessions. A multi-threaded conversation architecture allowed different tasks to run in parallel through separate channels. Cron jobs and heartbeat monitoring kept the bot running continuously, while heavy programming tasks were delegated to Codex, Anthropic's coding agent. A critical security measure separated authenticated command channels from information channels to prevent prompt injection attacks.
+
+## The Skills That Mattered
+
+The key to Felix's success lay in the orchestration of multiple OpenClaw Skills rather than any single capability. The PARA memory system gave Felix strategic continuity — it could recall what worked yesterday and adjust today's plan accordingly. The delegation pattern was equally important: rather than attempting everything itself, Felix learned to route coding tasks to Codex and content tasks to Claude, acting more like a project manager than a single worker.
+
+## The Results
+
+After three weeks, Felix had generated $14,718 in revenue — a roughly 14.7x return on the initial $1,000 investment. The bot built functional websites, created information products that attracted paying customers, and grew an X account with genuine engagement. Eliason documented the entire process in a detailed tutorial on Creator Economy and discussed the implications on the Bankless podcast, framing it as an early example of what he calls a "zero-human company." The replicability score sits at 3 out of 5 — the concept is proven, but building a reliable multi-agent architecture with proper memory and security layers requires meaningful technical skill.
