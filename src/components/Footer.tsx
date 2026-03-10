@@ -1,6 +1,11 @@
+'use client'
+
 import Link from 'next/link'
+import { useLanguage } from '@/lib/i18n'
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="bg-primary text-white/60 mt-20">
       <div className="max-w-6xl mx-auto px-4 py-12">
@@ -11,57 +16,56 @@ export default function Footer() {
               <span className="text-teal text-sm font-normal">How</span>
             </h3>
             <p className="text-sm leading-relaxed">
-              Real-world cases and scene solutions for building with OpenClaw AI
-              agents.
+              {t('footerDesc')}
             </p>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-3">Explore</h4>
+            <h4 className="text-white font-semibold mb-3">{t('explore')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/" className="hover:text-teal transition-colors">
-                  All Cases
+                  {t('allCases')}
                 </Link>
               </li>
               <li>
                 <Link href="/tags" className="hover:text-teal transition-colors">
-                  Browse Tags
+                  {t('browseTags')}
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="hover:text-teal transition-colors">
-                  About
+                  {t('about')}
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-3">Industries</h4>
+            <h4 className="text-white font-semibold mb-3">{t('industries')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/industry/ecommerce" className="hover:text-teal transition-colors">
-                  E-commerce
+                  {t('ecommerce')}
                 </Link>
               </li>
               <li>
                 <Link href="/industry/saas" className="hover:text-teal transition-colors">
-                  SaaS
+                  {t('saas')}
                 </Link>
               </li>
               <li>
                 <Link href="/industry/content" className="hover:text-teal transition-colors">
-                  Content
+                  {t('content')}
                 </Link>
               </li>
               <li>
                 <Link href="/industry/marketing" className="hover:text-teal transition-colors">
-                  Marketing
+                  {t('marketing')}
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-3">Community</h4>
+            <h4 className="text-white font-semibold mb-3">{t('community')}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
@@ -70,7 +74,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-teal transition-colors"
                 >
-                  Submit a Case
+                  {t('submitCase')}
                 </a>
               </li>
               <li>
@@ -97,7 +101,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-white/10 mt-10 pt-6 text-center text-xs">
-          &copy; {new Date().getFullYear()} OpenClaw How. All rights reserved.
+          &copy; {new Date().getFullYear()} {t('copyright')}
         </div>
       </div>
     </footer>

@@ -97,6 +97,20 @@ export default function IndustryPage({ params }: Props) {
   const caseCount = posts.filter((p) => p.type === 'case').length
   const sceneCount = posts.filter((p) => p.type === 'scene').length
 
+  // Collect unique tags and tools across posts in this industry
+  const allTags = new Set<string>()
+  const allTools = new Set<string>()
+  let totalIncome = 0
+  let incomeCount = 0
+  for (const p of posts) {
+    p.tags.forEach((t) => allTags.add(t))
+    if (p.tool) allTools.add(p.tool)
+    if (p.income) {
+      totalIncome += p.income
+      incomeCount++
+    }
+  }
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
       <Link
@@ -111,17 +125,35 @@ export default function IndustryPage({ params }: Props) {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-primary mb-3">
           {name}
         </h1>
-        <p className="text-gray-600 leading-relaxed max-w-3xl mb-4">
+        <p className="text-gray-600 leading-relaxed max-w-3xl mb-6">
           {description}
         </p>
-        <div className="flex gap-4 text-sm">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-accent/10 text-accent rounded-full font-medium">
-            {caseCount} {caseCount === 1 ? 'Case' : 'Cases'}
-          </span>
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-teal/10 text-teal rounded-full font-medium">
-            {sceneCount} {sceneCount === 1 ? 'Solution' : 'Solutions'}
-          </span>
+
+        {/* Stats summary */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+          <div className="bg-accent/5 rounded-lg p-4 text-center">
+            <div className="text-2xl font-extrabold text-accent">{caseCount}</div>
+            <div className="text-xs text-gray-500 mt-1">{caseCount === 1 ? 'Case Study' : 'Case Studies'}</div>
+          </div>
+          <div className="bg-teal/5 rounded-lg p-4 text-center">
+            <div className="text-2xl font-extrabold text-teal">{sceneCount}</div>
+            <div className="text-xs text-gray-500 mt-1">{sceneCount === 1 ? 'Solution' : 'Solutions'}</div>
+          </div>
+          <div className="bg-purple-50 rounded-lg p-4 text-center">
+            <div className="text-2xl font-extrabold text-purple-600">{allTools.size}</div>
+            <div className="text-xs text-gray-500 mt-1">{allTools.size === 1 ? 'Tool Used' : 'Tools Used'}</div>
+          </div>
+          <div className="bg-blue-50 rounded-lg p-4 text-center">
+            <div className="text-2xl font-extrabold text-blue-600">{allTags.size}</div>
+            <div className="text-xs text-gray-500 mt-1">Topics Covered</div>
+          </div>
         </div>
+
+        {incomeCount > 0 && (
+          <p className="text-sm text-gray-500">
+            Average reported income: <span className="font-semibold text-accent">${Math.round(totalIncome / incomeCount).toLocaleString()}/mo</span> across {incomeCount} {incomeCount === 1 ? 'case' : 'cases'}
+          </p>
+        )}
       </div>
 
       {/* Posts grid */}

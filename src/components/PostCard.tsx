@@ -3,12 +3,18 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Post } from '@/lib/types'
+import { useLanguage, getIndustryTranslationKey } from '@/lib/i18n'
 
 export default function PostCard({ post }: { post: Post }) {
   const isCase = post.type === 'case'
+  const { lang, t } = useLanguage()
   const tagColor = isCase ? 'bg-accent' : 'bg-teal'
-  const tagLabel = isCase ? 'Case' : 'Solution'
+  const tagLabel = isCase ? t('caseStudy') : t('sceneSolution')
   const router = useRouter()
+
+  const displayTitle = lang === 'zh' && post.titleZh ? post.titleZh : post.title
+  const industryKey = getIndustryTranslationKey(post.industry)
+  const displayIndustry = t(industryKey)
 
   return (
     <article
@@ -21,11 +27,11 @@ export default function PostCard({ post }: { post: Post }) {
         >
           {tagLabel}
         </span>
-        <span className="text-xs text-gray-400">{post.industry}</span>
+        <span className="text-xs text-gray-400">{displayIndustry}</span>
       </div>
 
       <h2 className="font-bold text-lg text-primary leading-snug mb-2 line-clamp-2">
-        {post.title}
+        {displayTitle}
       </h2>
 
       {post.income && (
@@ -33,7 +39,7 @@ export default function PostCard({ post }: { post: Post }) {
           <span className="text-2xl font-extrabold text-accent">
             ${post.income.toLocaleString()}
           </span>
-          <span className="text-sm text-gray-500 ml-1">/mo</span>
+          <span className="text-sm text-gray-500 ml-1">{t('perMonth')}</span>
         </div>
       )}
 

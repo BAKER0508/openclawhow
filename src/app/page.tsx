@@ -4,26 +4,27 @@ import { Suspense, useEffect, useState, useMemo } from 'react'
 import { useSearchParams } from 'next/navigation'
 import PostCard from '@/components/PostCard'
 import { Post } from '@/lib/types'
+import { useLanguage, getIndustryTranslationKey } from '@/lib/i18n'
 
 const industries = [
-  { label: 'All', value: 'all' },
-  { label: 'E-commerce', value: 'ecommerce' },
-  { label: 'SaaS', value: 'saas' },
-  { label: 'Content', value: 'content' },
-  { label: 'Marketing', value: 'marketing' },
-  { label: 'Education', value: 'education' },
-  { label: 'Real Estate', value: 'real-estate' },
-  { label: 'Legal', value: 'legal' },
-  { label: 'HR', value: 'hr' },
-  { label: 'Finance', value: 'finance' },
-  { label: 'Data Analysis', value: 'data-analysis' },
-  { label: 'Developer Tools', value: 'developer-tools' },
+  { value: 'all', key: 'all' },
+  { value: 'ecommerce', key: 'ecommerce' },
+  { value: 'saas', key: 'saas' },
+  { value: 'content', key: 'content' },
+  { value: 'marketing', key: 'marketing' },
+  { value: 'education', key: 'education' },
+  { value: 'real-estate', key: 'realEstate' },
+  { value: 'legal', key: 'legal' },
+  { value: 'hr', key: 'hr' },
+  { value: 'finance', key: 'finance' },
+  { value: 'data-analysis', key: 'dataAnalysis' },
+  { value: 'developer-tools', key: 'developerTools' },
 ]
 
 const typeFilters = [
-  { label: 'All', value: 'all' },
-  { label: 'Cases', value: 'case' },
-  { label: 'Solutions', value: 'scene' },
+  { value: 'all', key: 'all' },
+  { value: 'case', key: 'filterCases' },
+  { value: 'scene', key: 'filterSolutions' },
 ]
 
 function HomeContent() {
@@ -32,6 +33,7 @@ function HomeContent() {
   const [activeIndustry, setActiveIndustry] = useState('all')
   const searchParams = useSearchParams()
   const searchQuery = searchParams.get('q') || ''
+  const { lang, t } = useLanguage()
 
   useEffect(() => {
     fetch('/api/posts')
@@ -55,6 +57,7 @@ function HomeContent() {
       result = result.filter(
         (p) =>
           p.title.toLowerCase().includes(q) ||
+          (p.titleZh && p.titleZh.toLowerCase().includes(q)) ||
           p.excerpt.toLowerCase().includes(q) ||
           p.tags.some((t) => t.toLowerCase().includes(q))
       )
@@ -73,29 +76,30 @@ function HomeContent() {
       <section className="bg-primary text-white py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-            Discover How People{' '}
-            <span className="text-accent">Make Money</span> with{' '}
+            {t('heroTitle')}{' '}
+            <span className="text-accent">{t('heroTitleHighlight')}</span>{' '}
+            {lang === 'en' && <>{t('heroTitleWith')}{' '}</>}
             <span className="text-teal">OpenClaw</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/70 max-w-2xl mx-auto mb-8">
-            Real cases, proven solutions, updated daily
+            {t('heroSubtitle')}
           </p>
 
           {/* Stats bar */}
           <div className="flex items-center justify-center gap-6 sm:gap-10 mb-10">
             <div className="text-center">
               <span className="text-3xl font-extrabold text-accent">{caseCount}+</span>
-              <p className="text-sm text-white/60 mt-1">Cases</p>
+              <p className="text-sm text-white/60 mt-1">{t('cases')}</p>
             </div>
             <div className="w-px h-10 bg-white/20" />
             <div className="text-center">
               <span className="text-3xl font-extrabold text-teal">{sceneCount}+</span>
-              <p className="text-sm text-white/60 mt-1">Solutions</p>
+              <p className="text-sm text-white/60 mt-1">{t('solutions')}</p>
             </div>
             <div className="w-px h-10 bg-white/20" />
             <div className="text-center">
               <span className="text-3xl font-extrabold text-white">{industryCount}</span>
-              <p className="text-sm text-white/60 mt-1">Industries</p>
+              <p className="text-sm text-white/60 mt-1">{t('industries')}</p>
             </div>
           </div>
 
@@ -103,7 +107,7 @@ function HomeContent() {
             href="#posts"
             className="inline-block px-8 py-3 bg-accent text-white font-semibold rounded-full hover:bg-accent/90 transition-colors text-lg shadow-lg shadow-accent/25"
           >
-            Browse Cases &amp; Solutions
+            {t('browseCTA')}
           </a>
         </div>
       </section>
@@ -122,7 +126,7 @@ function HomeContent() {
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
-                {ind.label}
+                {t(ind.key)}
               </button>
             ))}
           </div>
@@ -135,13 +139,13 @@ function HomeContent() {
         {searchQuery && (
           <div className="mb-6 flex items-center gap-2">
             <span className="text-sm text-gray-500">
-              Search results for &quot;{searchQuery}&quot;
+              {t('searchResults')} &quot;{searchQuery}&quot;
             </span>
             <a
               href="/"
               className="text-sm text-accent hover:underline"
             >
-              Clear
+              {t('clear')}
             </a>
           </div>
         )}
@@ -158,11 +162,11 @@ function HomeContent() {
                   : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
               }`}
             >
-              {f.label}
+              {t(f.key)}
             </button>
           ))}
           <span className="ml-auto text-sm text-gray-400 self-center">
-            {filtered.length} {filtered.length === 1 ? 'post' : 'posts'}
+            {filtered.length} {filtered.length === 1 ? t('post') : t('posts')}
           </span>
         </div>
 
@@ -175,7 +179,7 @@ function HomeContent() {
 
         {filtered.length === 0 && posts.length > 0 && (
           <p className="text-center text-gray-400 py-12">
-            No posts found for this filter.
+            {t('noResults')}
           </p>
         )}
       </div>
