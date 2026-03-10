@@ -34,3 +34,27 @@ Clients report that interview-to-offer ratios improved by 35% because the candid
 ## Key Takeaways
 
 The replicability score is 4 out of 5. The model works well for any HR professional with recruiting expertise who serves multiple clients. The key differentiator is the quality of the scoring rubrics — James spends 2-3 hours per role building these, drawing on his deep understanding of what actually predicts success in each position. His advice for anyone replicating this: "The AI is only as good as your rubric. If you can't articulate what makes a great candidate for a role, the AI certainly can't figure it out for you." He plans to scale to 12 clients by Q3 2026, which he estimates will bring revenue to $12K/month without hiring additional staff.
+
+<!-- zh -->
+
+## 背景
+
+James Thornton在中型科技公司做了12年人才招聘经理后独立出来做HR顾问。他的客户——没有专职招聘团队的初创公司和成长型企业——需要帮助筛选大量工程和产品岗位的申请。James每周花15-20小时只是在看简历，这项工作虽然必要，但几乎没有留下时间做客户真正聘请他做的高价值工作：面试设计、薪酬对标和招聘策略。
+
+## 他做了什么
+
+James使用OpenClaw搭建了一套AI驱动的简历筛选流水线，从客户的招聘网站和求职页面处理申请。邮件技能在申请到达时自动接收。AI解析每份简历，提取结构化数据（技能、经验年限、教育背景、项目亮点），并根据存储在知识库技能中的岗位评分标准进行打分。
+
+每个客户都有James在入职阶段定制的评分标准：必备资质、按重要性加权的优选技能，以及自动否决项。Google Sheets技能为每个开放岗位维护一个实时候选人管道，可按分数、申请日期和阶段排序。高分候选人（75分以上）自动收到个性化确认邮件并进入面试安排队列，日历技能协调候选人和客户招聘经理之间的时间安排。
+
+低于阈值的候选人在48小时内会收到一封得体的拒绝邮件——这是James的大多数客户之前从未做到的事情。
+
+## 成效
+
+James现在同时服务6个客户，每个客户每月支付1000美元的筛选服务费加上他的战略咨询费。AI每月为所有客户处理约800份申请。他在简历筛选上的时间从每周20小时降至约3小时的抽查和标准微调。
+
+客户反馈面试到录用比提高了35%，因为进入面试阶段的候选人更合格了。首次面试等待时间从平均12天缩短到4天。候选人体验得分显著提升——申请者一致提到快速、专业的沟通是一个正面的差异化因素。
+
+## 关键收获
+
+可复制性评分4/5。这个模式适用于任何具备招聘专业知识且服务多个客户的HR从业者。核心差异化因素是评分标准的质量——James每个岗位花2-3小时建立标准，依靠的是他对什么能真正预测各岗位成功的深刻理解。他对想要复制的人的建议是："AI和你的评分标准一样好。如果你说不清一个岗位什么样的候选人才是优秀的，AI当然也搞不清楚。"他计划在2026年第三季度扩展到12个客户，预计月收入将达到12000美元而无需增加人手。

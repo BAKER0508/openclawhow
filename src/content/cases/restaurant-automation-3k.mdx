@@ -32,3 +32,25 @@ Average order value increased 18% because the AI consistently suggests add-ons a
 ## Key Takeaways
 
 The replicability score is 4 out of 5 because the setup is straightforward and the ROI is clear for any restaurant doing meaningful delivery volume. The critical success factor was David's investment in building a thorough menu database with every customization option and allergen note. He spent two full weekends digitizing the menus and testing edge cases before going live. His advice: "Don't launch until you've tested every item on the menu with at least three weird customization requests."
+
+<!-- zh -->
+
+## 背景
+
+David Okonkwo在休斯顿经营着一家名为Sahara Kitchen的三店尼日利亚餐厅连锁。每家店每天通过电话、WhatsApp消息和第三方平台处理80-120个外卖订单。电话点餐一直是个头疼的问题：语言障碍导致频繁的订单错误，晚餐高峰期的等待时间赶跑了客户，而且他需要雇三个兼职员工专门在三个门店接听电话订单。
+
+## 他做了什么
+
+David通过WhatsApp和网站部署了一套OpenClaw驱动的点餐系统。AI Agent展示带图片的完整菜单，处理定制需求（辣度、蛋白质替换、套餐组合），计算含税和配送费的总价，并在处理前以逐项清单确认订单。知识库技能存储了包含英语和西班牙语两个版本的完整菜单、食材和过敏原信息，服务休斯顿多元化的客户群。
+
+订单确认通过Google Sheets技能直接传送到每个厨房的显示屏，充当一个轻量级的订单管理系统。通知技能在订单积压超过阈值时提醒厨房经理，并向客户发送实时状态更新：订单已确认、准备中、可取餐或已配送。
+
+## 成效
+
+第一个月内，WhatsApp和网页点餐承接了之前电话订单总量的65%。订单错误从所有门店平均每天8个降至不到1个。David将电话接单人员从三名兼职减少到一名，每月节省约3000美元人工成本。
+
+平均客单价提升了18%，因为AI会持续推荐加料和套餐——这是电话员工做得不够一致的事情。客户关于错误订单的投诉下降了85%。一个意外收获是，现在结构清晰地存储在电子表格中的订单数据，让David清楚地看到各门店哪些菜品表现最好，进而优化了菜单并进一步提升了利润率。
+
+## 关键收获
+
+可复制性评分4/5，因为搭建过程简单明了，对于任何有一定外卖量的餐厅来说ROI也很清晰。关键成功因素是David在搭建完整菜单数据库上的投入，涵盖了每个定制选项和过敏原标注。他花了整整两个周末将菜单数字化并测试边缘案例。他的建议："在菜单上的每道菜都用至少三个奇怪的定制要求测试过之前，不要上线。"

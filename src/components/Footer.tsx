@@ -100,7 +100,15 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 mt-10 pt-6 text-center text-xs">
+
+        {/* Disclaimer */}
+        <div className="border-t border-white/10 mt-10 pt-6">
+          <p className="text-xs text-white/40 leading-relaxed max-w-4xl mx-auto text-center">
+            {t('disclaimerText')}
+          </p>
+        </div>
+
+        <div className="border-t border-white/10 mt-6 pt-6 text-center text-xs">
           &copy; {new Date().getFullYear()} {t('copyright')}
         </div>
       </div>

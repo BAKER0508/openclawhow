@@ -26,7 +26,12 @@ export function getAllPosts(): Post[] {
     const fileContent = fs.readFileSync(filePath, 'utf-8')
     const { data, content } = matter(fileContent)
     const slug = path.basename(filePath, path.extname(filePath))
-    const excerpt = content.trim().slice(0, 200).replace(/[#*_\n]/g, ' ').trim()
+
+    const contentParts = content.split('<!-- zh -->')
+    const contentEn = contentParts[0].trim()
+    const contentZh = contentParts.length > 1 ? contentParts[1].trim() : ''
+
+    const excerpt = contentEn.slice(0, 200).replace(/[#*_\n]/g, ' ').trim()
 
     return {
       slug,
@@ -41,9 +46,18 @@ export function getAllPosts(): Post[] {
       date: data.date || '',
       replicability: data.replicability,
       tags: data.tags || [],
-      content,
+      content: contentEn,
+      contentZh,
       excerpt,
       excerptZh: data.excerptZh || '',
+      // New structured fields
+      difficulty: data.difficulty,
+      teamSize: data.teamSize,
+      timeframe: data.timeframe,
+      model: data.model,
+      targetAudience: data.targetAudience,
+      sourceType: data.sourceType,
+      verified: data.verified,
     } as Post
   })
 

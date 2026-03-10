@@ -28,3 +28,21 @@ The key to Felix's success lay in the orchestration of multiple OpenClaw Skills 
 ## The Results
 
 After three weeks, Felix had generated $14,718 in revenue — a roughly 14.7x return on the initial $1,000 investment. The bot built functional websites, created information products that attracted paying customers, and grew an X account with genuine engagement. Eliason documented the entire process in a detailed tutorial on Creator Economy and discussed the implications on the Bankless podcast, framing it as an early example of what he calls a "zero-human company." The replicability score sits at 3 out of 5 — the concept is proven, but building a reliable multi-agent architecture with proper memory and security layers requires meaningful technical skill.
+
+<!-- zh -->
+
+## 实验过程
+
+Nat Eliason是知名创作者和Behind the Craft播客主持人，他决定回答一个挑衅性的问题：AI机器人能否独立建立并运营一个盈利的生意？他给了一个名为Felix的OpenClaw机器人1000美元预算和三周时间来证明自己。Felix的任务是搭建网站、创建和销售信息产品、运营X（Twitter）账号，且尽量减少人工干预。
+
+## 技术架构
+
+Felix背后的系统远比一个简单的聊天机器人复杂。Eliason设计了一个三层记忆系统，由知识图谱、每日笔记和隐式知识库组成，赋予Felix跨会话的持久上下文。多线程对话架构允许不同任务通过独立频道并行执行。定时任务和心跳监控保持机器人持续运行，而重度编程任务则委托给Anthropic的编程Agent Codex。一项关键安全措施是将经过身份验证的命令通道与信息通道分离，以防止提示注入攻击。
+
+## 关键技能
+
+Felix成功的关键在于多个OpenClaw技能的协调编排，而非任何单一能力。PARA记忆系统赋予了Felix战略连续性——它能回忆起昨天什么有效并据此调整今天的计划。任务委派模式同样重要：Felix不是试图自己做所有事情，而是学会了将编码任务路由给Codex、内容任务路由给Claude，更像一个项目经理而非单一工人。
+
+## 成果
+
+三周后，Felix产生了14718美元的收入——初始1000美元投资获得了约14.7倍的回报。机器人搭建了功能完善的网站，创建了吸引付费客户的信息产品，并运营了一个有真实互动的X账号。Eliason在Creator Economy上以详细教程记录了整个过程，并在Bankless播客上讨论了其影响，将其定义为他所说的"零人公司"的早期案例。可复制性评分3/5——概念已得到验证，但构建一个具备完善记忆和安全层的可靠多Agent架构需要相当的技术能力。

@@ -12,6 +12,15 @@ export interface Post {
   replicability?: number
   tags: string[]
   content: string
+  contentZh?: string
   excerpt: string
   excerptZh?: string
+  // New structured fields
+  difficulty?: 'low' | 'medium' | 'high'
+  teamSize?: string
+  timeframe?: string
+  model?: string  // business model: service/saas/content/agency/automation
+  targetAudience?: string  // solo/small-team/enterprise
+  sourceType?: string  // interview/user-submitted/public-post/blog/video
+  verified?: boolean
 }

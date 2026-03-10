@@ -32,3 +32,25 @@ Within five days of launching, Larry had generated between $714 and $1,000 in mo
 ## Key Takeaways
 
 The Larry case demonstrates a pattern that is becoming common in the OpenClaw ecosystem: combining a content generation model, a distribution API, and a revenue tracking tool into a self-optimizing loop. The agent does not just create and post — it measures what works financially and adjusts accordingly. Henry's decision to open-source the Larry Skill means others can replicate or modify the approach. Replicability is rated 4 out of 5 — the tools are accessible and the pattern is well-documented, though achieving viral reach still depends on content quality and niche selection.
+
+<!-- zh -->
+
+## 故事
+
+独立开发者Oliver Henry创建了一个名为Larry的AI Agent，全自动化TikTok短视频内容。整个系统在一台旧游戏PC上运行OpenClaw——无需云基础设施。Larry的工作是全天候生成、发布和优化病毒式内容，人工监管降到最低。Henry后来在OpenClaw官方市场ClawHub上开源了Larry技能。
+
+## 工作原理
+
+Larry的流水线通过OpenClaw编排三个专业工具：
+
+- **gpt-image-1.5**——生成用于TikTok视频的照片级幻灯片内容。Larry不使用素材库或屏幕录制，而是创建匹配热门格式和话题的原创视觉资产。
+- **Postiz**——处理社交媒体排期和分发。Larry通过Postiz API自动上传成品内容到TikTok的草稿队列，可以审核或按计划直接发布。
+- **RevenueCat**——追踪与Larry内容账号相关的每日MRR变化。Agent利用这些收入数据调整内容策略，加大投入在带来最多订阅转化的格式和话题上。
+
+## 成果
+
+上线五天内，Larry就产生了714到1000美元的月经常性收入，累计超过50万TikTok浏览量。增长持续加速——在随后几周，Larry的内容每周触达约800万次浏览。收入来自TikTok创作者变现计划和通过内容推广的订阅产品的组合。
+
+## 关键收获
+
+Larry案例展示了OpenClaw生态系统中正在变得普遍的一种模式：将内容生成模型、分发API和收入追踪工具组合成一个自优化闭环。Agent不只是创建和发布——它衡量什么在财务上有效并据此调整。Henry开源Larry技能的决定意味着其他人可以复制或修改这个方案。可复制性评分4/5——工具易于获取且模式有完善文档，不过实现病毒式传播仍取决于内容质量和赛道选择。

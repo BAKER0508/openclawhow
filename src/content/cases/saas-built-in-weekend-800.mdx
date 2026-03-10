@@ -47,3 +47,40 @@ The OpenClaw agent handles the heavy lifting:
 - Pricing matters: started at $10/month, raised to $25 when demand exceeded expectations
 
 > "Without OpenClaw, this would have been a 2-month project. The Content Skill alone saved me probably 60 hours of work."
+
+<!-- zh -->
+
+## 创意
+
+Marcos是一名开发者，注意到自由撰稿人在SEO优化方面很吃力。他决定做一个帮博主优化搜索引擎内容的AI写作助手——用一个周末完成。
+
+## 开发过程
+
+使用**OpenClaw + Claude Code**，Marcos在48小时内搭建了整个SaaS：
+
+- **周六上午**：用Clerk搭建了带认证的Next.js应用
+- **周六下午**：集成OpenClaw的内容技能作为核心写作引擎
+- **周六晚上**：搭建了SEO分析流水线——关键词密度、可读性评分、meta标签建议
+- **周日**：添加了Stripe支付、落地页，并部署到Vercel
+
+OpenClaw Agent负责核心工作：
+- 分析任何目标关键词的排名靠前文章
+- 生成优化的内容大纲
+- 改写草稿以提升SEO评分
+- 建议内链机会
+
+## 第一个月成果
+
+- 周一在Twitter和IndieHackers上发布
+- 第一个月底**32个付费用户**
+- 每用户每月25美元，**MRR达到800美元**
+- 早期用户**评分4.8/5**
+- 总基础设施成本：**每月47美元**（Vercel Pro + OpenClaw API）
+
+## 经验教训
+
+- 快速发布，之后迭代——第一个版本有bug，但用户不在乎，因为核心价值足够强
+- OpenClaw的API让AI集成变得简单——需要数周提示工程的工作几小时就搞定了
+- 定价很重要：最初定价10美元/月，在需求超过预期后提到了25美元
+
+> "没有OpenClaw，这会是一个两个月的项目。光是内容技能就帮我省了大概60小时的工作量。"

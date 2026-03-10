@@ -9,7 +9,13 @@ import {
   PostMetaBar,
   PostSourceLink,
   BackToAllLink,
-  RelatedPostLabel,
+  IndustryLabel,
+  ReadingTimeLabel,
+  MoreFromIndustry,
+  RelatedPostCard,
+  PostContent,
+  StructuredInfoBox,
+  ReplicateSection,
 } from '@/components/PostDetailClient'
 
 interface Props {
@@ -152,6 +158,7 @@ export default function PostPage({ params }: Props) {
 
   const readingTime = estimateReadingTime(post.content)
   const htmlContent = markdownToHtml(post.content)
+  const htmlContentZh = post.contentZh ? markdownToHtml(post.contentZh) : ''
 
   // Related posts: same industry, excluding current, up to 3
   const allPosts = getAllPosts()
@@ -174,9 +181,9 @@ export default function PostPage({ params }: Props) {
         >
           <PostTypeLabel isCase={isCase} />
         </span>
-        <span className="text-sm text-gray-400">{post.industry}</span>
+        <span className="text-sm text-gray-400"><IndustryLabel industry={post.industry} /></span>
         <span className="text-sm text-gray-400">{post.date}</span>
-        <span className="text-sm text-gray-400">{readingTime} min read</span>
+        <span className="text-sm text-gray-400"><ReadingTimeLabel minutes={readingTime} /></span>
       </div>
 
       <PostTitleDisplay title={post.title} titleZh={post.titleZh} />
@@ -187,10 +194,28 @@ export default function PostPage({ params }: Props) {
         replicability={post.replicability}
       />
 
-      <article
-        className="prose max-w-none"
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      {/* Structured Info Box */}
+      <StructuredInfoBox
+        model={post.model}
+        difficulty={post.difficulty}
+        teamSize={post.teamSize}
+        timeframe={post.timeframe}
+        targetAudience={post.targetAudience}
+        sourceType={post.sourceType}
+        verified={post.verified}
       />
+
+      <PostContent htmlEn={htmlContent} htmlZh={htmlContentZh} />
+
+      {/* How to Replicate section */}
+      {isCase && (
+        <ReplicateSection
+          targetAudience={post.targetAudience}
+          tool={post.tool}
+          difficulty={post.difficulty}
+          timeframe={post.timeframe}
+        />
+      )}
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2 mt-10 pt-6 border-t border-gray-200">
@@ -217,33 +242,18 @@ export default function PostPage({ params }: Props) {
       {relatedPosts.length > 0 && (
         <div className="mt-12 pt-8 border-t border-gray-200">
           <h2 className="text-xl font-bold text-primary mb-6">
-            More from {post.industry}
+            <MoreFromIndustry industry={post.industry} />
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {relatedPosts.map((rp) => (
-              <Link
+              <RelatedPostCard
                 key={rp.slug}
-                href={`/posts/${rp.slug}`}
-                className="block bg-white rounded-lg p-4 border border-gray-100 hover:border-teal hover:shadow-sm transition-all"
-              >
-                <span
-                  className={`inline-block text-xs font-medium px-2 py-0.5 rounded-full mb-2 ${
-                    rp.type === 'case'
-                      ? 'bg-accent/10 text-accent'
-                      : 'bg-teal/10 text-teal'
-                  }`}
-                >
-                  <RelatedPostLabel isCase={rp.type === 'case'} />
-                </span>
-                <h3 className="text-sm font-semibold text-primary leading-snug line-clamp-2">
-                  {rp.title}
-                </h3>
-                {rp.income && (
-                  <p className="text-xs text-accent font-semibold mt-1">
-                    ${rp.income.toLocaleString()}/mo
-                  </p>
-                )}
-              </Link>
+                slug={rp.slug}
+                title={rp.title}
+                titleZh={rp.titleZh}
+                type={rp.type}
+                income={rp.income}
+              />
             ))}
           </div>
         </div>

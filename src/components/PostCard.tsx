@@ -5,6 +5,34 @@ import { useRouter } from 'next/navigation'
 import { Post } from '@/lib/types'
 import { useLanguage, getIndustryTranslationKey } from '@/lib/i18n'
 
+function DifficultyBadge({ difficulty, t }: { difficulty: string; t: (key: string) => string }) {
+  const config: Record<string, { emoji: string; key: string; color: string }> = {
+    low: { emoji: '\ud83d\udfe2', key: 'difficultyBadgeLow', color: 'bg-green-50 text-green-700' },
+    medium: { emoji: '\ud83d\udfe1', key: 'difficultyBadgeMedium', color: 'bg-yellow-50 text-yellow-700' },
+    high: { emoji: '\ud83d\udd34', key: 'difficultyBadgeHigh', color: 'bg-red-50 text-red-700' },
+  }
+  const c = config[difficulty]
+  if (!c) return null
+  return (
+    <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${c.color}`}>
+      {c.emoji}{t(c.key)}
+    </span>
+  )
+}
+
+function SourceIndicator({ sourceType, verified, t }: { sourceType?: string; verified?: boolean; t: (key: string) => string }) {
+  if (verified) {
+    return <span className="text-xs text-green-600 font-medium">{t('sourceVerified')}</span>
+  }
+  if (sourceType === 'user-submitted') {
+    return <span className="text-xs text-blue-600 font-medium">{t('sourceUserSubmitted')}</span>
+  }
+  if (sourceType === 'public-post') {
+    return <span className="text-xs text-gray-500 font-medium">{t('sourcePublicCase')}</span>
+  }
+  return null
+}
+
 export default function PostCard({ post }: { post: Post }) {
   const isCase = post.type === 'case'
   const { lang, t } = useLanguage()
@@ -21,20 +49,24 @@ export default function PostCard({ post }: { post: Post }) {
       onClick={() => router.push(`/posts/${post.slug}`)}
       className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 h-full flex flex-col cursor-pointer"
     >
-      <div className="flex items-center gap-2 mb-3">
+      <div className="flex items-center gap-2 mb-3 flex-wrap">
         <span
           className={`${tagColor} text-white text-xs font-medium px-2.5 py-1 rounded-full`}
         >
           {tagLabel}
         </span>
         <span className="text-xs text-gray-400">{displayIndustry}</span>
+        {post.difficulty && (
+          <DifficultyBadge difficulty={post.difficulty} t={t} />
+        )}
+        <SourceIndicator sourceType={post.sourceType} verified={post.verified} t={t} />
       </div>
 
       <h2 className="font-bold text-lg text-primary leading-snug mb-2 line-clamp-2">
         {displayTitle}
       </h2>
 
-      {post.income && post.income > 0 && (
+      {isCase && post.income && post.income > 0 && (
         <div className="mb-3">
           <span className="text-2xl font-extrabold text-accent">
             ${post.income.toLocaleString()}

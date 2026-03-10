@@ -41,3 +41,35 @@ Using OpenClaw's **Browser Skill** and **Data Skill**, Jenny built an automated 
 - Total setup time: about 12 hours spread over a week
 
 > "I went from dreading Mondays to actually looking forward to them. The reports basically write themselves now, and I can focus on the interesting analytical work."
+
+<!-- zh -->
+
+## 痛点
+
+Jenny是一家中型营销机构的数据分析师。每周一，她都要从6个不同平台（Google Analytics、Meta Ads、Shopify、Mailchimp、HubSpot和Google Sheets）手动拉取数据，汇编成报告，然后向8个客户做汇报。这每周要花**15-20小时**——几乎占了她一半的工作时间。
+
+## 自动化方案
+
+Jenny使用OpenClaw的**浏览器技能**和**数据技能**搭建了一套自动化报告流水线：
+
+- **数据采集**：浏览器技能每周一早上6点自动登录各平台并提取关键指标
+- **数据处理**：数据技能将所有数据统一格式化，计算周环比变化，识别异常
+- **报告生成**：为每个客户生成模板化报告，包含图表、洞察和行动建议
+- **报告分发**：报告在早上9点前自动发送到客户邮箱
+
+## 成效
+
+- 报告生成时间：**从每周20小时降至每周2小时**（只需审阅和小幅修改）
+- 整体效率提升**10倍**
+- 报告**更加一致**——不再有复制粘贴错误
+- 客户**提前3小时**收到报告
+- Jenny现在有时间做**深度分析**，真正创造战略价值
+
+## 技术细节
+
+- Agent通过定时任务在每周一自动运行
+- 每个平台的集成大约需要30分钟设置
+- 最难的部分是图表格式调整——额外花了一天时间
+- 总设置时间：约12小时，分散在一周内完成
+
+> "我从害怕周一变成了真正期待周一。报告基本上是自动写好的，我可以专注于有趣的分析工作了。"

@@ -28,3 +28,21 @@ SimpleClaw's growth was unusually fast even by indie hacker standards. By day fi
 ## What Made It Work
 
 Two factors drove the rapid adoption. First, the product solved a real friction point — OpenClaw setup is not trivial, and many potential users were willing to pay to skip it. Second, endorsements from prominent figures in the indie hacker community, including levelsio, created a viral distribution effect. The case demonstrates a recurring pattern in developer tooling: when a powerful open-source tool gains rapid adoption, there is immediate demand for simplified wrappers, and the first credible one to market captures outsized value. Replicability is rated 3 out of 5 — the wrapper opportunity for OpenClaw specifically may be closing, but the pattern applies to any emerging open-source tool with a steep setup curve.
+
+<!-- zh -->
+
+## 发现机会
+
+全栈Web和iOS开发者Savio Martin发现了OpenClaw生态系统中的一个缺口：工具很强大但对非技术用户来说令人望而却步。他的解决方案是SimpleClaw，一个将OpenClaw复杂的设置过程变成一键部署体验的包装器。Martin没有重建OpenClaw的核心功能，而是在上面搭了一层简洁的界面——处理安装、模型选择和频道集成——让任何人都能在几分钟内运行起一个OpenClaw实例。
+
+## 如何搭建
+
+技术方案刻意做得很简洁。Martin编写了自动预装Node.js、OpenClaw和所有必需依赖的部署脚本。包装器提供了一个简单的界面来选择AI模型和连接Slack或Discord等沟通频道。整个产品建立在OpenClaw之上，不修改其核心代码，这意味着底层平台的更新可以自动透传。Martin通过第三方收入验证服务TrustMRR验证了他的收入，增加了增长数据的可信度。
+
+## 增长轨迹
+
+即使以独立开发者的标准来看，SimpleClaw的增长也异常迅速。到第五天，产品就达到了17000美元的月经常性收入，拥有超过300名付费用户。两周结束时，MRR突破30000美元。30天内，总收入达到41058美元，超过700名订阅用户。定价简单直接——每用户每月20到50美元——对比估计每用户5到10美元的成本，利润率很高。Martin最终以225000美元挂牌出售SimpleClaw，对应7.5倍MRR倍数。
+
+## 成功因素
+
+两个因素推动了快速增长。第一，产品解决了一个真实的摩擦点——OpenClaw的设置并不简单，许多潜在用户愿意花钱跳过。第二，独立开发者社区中知名人物（包括levelsio）的背书创造了病毒式传播效应。这个案例展示了开发者工具领域的一个循环模式：当一个强大的开源工具获得快速采用时，对简化包装器的需求随之出现，而第一个可靠的上市者会获得超额价值。可复制性评分3/5——针对OpenClaw的包装器机会可能正在关闭，但这个模式适用于任何有陡峭设置曲线的新兴开源工具。
