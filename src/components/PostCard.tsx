@@ -34,7 +34,7 @@ export default function PostCard({ post }: { post: Post }) {
         {displayTitle}
       </h2>
 
-      {post.income && (
+      {post.income && post.income > 0 && (
         <div className="mb-3">
           <span className="text-2xl font-extrabold text-accent">
             ${post.income.toLocaleString()}
@@ -44,7 +44,7 @@ export default function PostCard({ post }: { post: Post }) {
       )}
 
       <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1 line-clamp-3">
-        {post.excerpt}
+        {lang === 'zh' && post.excerptZh ? post.excerptZh : post.excerpt}
       </p>
 
       <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-100">

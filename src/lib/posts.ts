@@ -43,6 +43,7 @@ export function getAllPosts(): Post[] {
       tags: data.tags || [],
       content,
       excerpt,
+      excerptZh: data.excerptZh || '',
     } as Post
   })
 

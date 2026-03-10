@@ -202,6 +202,9 @@ const industryKeyMap: Record<string, string> = {
   'developer-tools': 'developerTools',
   'food-service': 'foodService',
   'healthcare': 'healthcare',
+  'human-resources': 'hr',
+  'social-media': 'marketing',
+  'developer': 'developerTools',
 }
 
 export function getIndustryTranslationKey(slug: string): string {

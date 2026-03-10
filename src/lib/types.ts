@@ -13,4 +13,5 @@ export interface Post {
   tags: string[]
   content: string
   excerpt: string
+  excerptZh?: string
 }
