@@ -31,10 +31,11 @@ const KEYWORDS = [
   'prompt engineering income', 'ai workflow automation'
 ]
 
-// OpenAI API for content generation (or compatible API)
-const AI_API_URL = process.env.AI_API_URL || 'https://api.openai.com/v1/chat/completions'
-const AI_API_KEY = process.env.OPENAI_API_KEY || ''
-const AI_MODEL = process.env.AI_MODEL || 'gpt-4o-mini'
+// AI API for content generation (supports OpenAI-compatible endpoints)
+// Default: Gemini Flash via 302.AI proxy (cheap & fast)
+const AI_API_URL = process.env.AI_API_URL || 'https://api.302.ai/v1/chat/completions'
+const AI_API_KEY = process.env.AI_API_KEY || process.env.OPENAI_API_KEY || ''
+const AI_MODEL = process.env.AI_MODEL || 'gemini-2.5-flash-preview-04-17'
 
 // --- State Management ---
 function loadState() {
