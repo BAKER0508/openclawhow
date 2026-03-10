@@ -1,0 +1,47 @@
+---
+title: "Unsolicited Outreach: 2 Companies' Automated GitHub Scraping Sparks Privacy Concerns and Complaints"
+titleZh: "未经请求的推广：两家公司自动化抓取GitHub数据引发隐私担忧与投诉"
+excerptZh: "一家Y Combinator支持的公司和另一家AI公司被指控自动化抓取GitHub用户活动数据，并发送未经同意的营销邮件，引发了关于数据隐私和GDPR合规性的热议。"
+type: "case"
+tool: "openclaw"
+industry: "marketing"
+
+person: "miki123211"
+source: "https://news.ycombinator.com/item?id=47163885"
+date: "2026-03-10"
+replicability: 3
+tags: ["GitHub scraping", "email marketing", "lead generation", "GDPR", "unsolicited emails", "AI/automation", "data privacy"]
+difficulty: "medium"
+model: "service"
+targetAudience: "solo"
+sourceType: "public-post"
+verified: false
+---
+
+## Background
+In a recent post on Hacker News, user miki123211 brought to light a concerning trend in lead generation: companies allegedly scraping GitHub activity to send unsolicited marketing emails. Mikołaj, the user, shared an email he received from "Run ANywhere," a YC-backed company (W26), with the subject line "Mikołaj, think you'd like this." The email explicitly stated, "I found your GitHub and thought you might like what we're building," indicating a direct link between his public GitHub contributions and the targeted outreach.
+
+This wasn't an isolated incident for Mikołaj. He reported receiving a "deluge of similar emails" from another company, "Voice.AI," which, though not YC-affiliated, employed the same tactic. Mikołaj's hypothesis was that these companies use automated systems to monitor GitHub activity, specifically commit metadata, to identify users contributing to repositories relevant to their business field. Once identified, these users are then added to marketing lists and sent targeted emails without their explicit consent.
+
+The core of Mikołaj's concern revolved around data privacy and compliance, particularly for recipients like himself who are protected under the GDPR (General Data Protection Regulation). The practice of collecting personal data (like email addresses linked to GitHub profiles) and using it for direct marketing without consent raises significant legal and ethical questions. Mikołaj took immediate action, sending complaints to both organizations and contacting GitHub and YC Ethics to report the issue, awaiting their responses.
+
+## What Was Built
+While miki123211 didn't build a solution, the case highlights the automated lead generation system built and employed by "Run ANywhere" and "Voice.AI." This system appears to involve several key components:
+
+1.  **Automated GitHub Scraping:** The foundation of their approach is likely a sophisticated script or bot designed to continuously monitor and extract data from public GitHub profiles and activity feeds. This includes commit metadata, repository contributions, and potentially other publicly available information linked to user accounts.
+2.  **Interest Profiling and Matching:** Once raw data is collected, an AI-powered or rule-based system analyzes the contributions to infer a user's technical interests and areas of expertise. For instance, if a user frequently contributes to machine learning repositories, they might be flagged as a potential lead for an AI company. This profiling allows for highly targeted outreach, ensuring that the marketing message is relevant to the recipient's perceived interests.
+3.  **Email Generation and Delivery:** After identifying a relevant lead, the system likely automates the generation of personalized email messages. These emails typically reference the user's GitHub activity to establish relevance, as seen in the "I found your GitHub" line. The system then manages the delivery of these emails at scale, leading to a "deluge" of messages for targeted individuals.
+
+The goal of this "built" system is clear: to efficiently identify and engage potential users or customers who are already active in a relevant technical domain, thereby streamlining the top of the sales funnel and increasing user acquisition. The sophistication implied by the "AI company" Voice.AI suggests that advanced machine learning might be used for more accurate interest profiling and even email content generation.
+
+## Results & Revenue
+The post does not provide specific revenue figures for "Run ANywhere" or "Voice.AI." However, the "results" from the perspective of miki123211 and potentially many other GitHub users are clear: an influx of unsolicited and unwanted marketing emails. For the companies, the immediate result is a scaled increase in outreach, potentially leading to a higher volume of initial engagements or sign-ups, which could translate into future revenue. The use of automation allows them to reach a vast number of highly targeted individuals with minimal manual effort, making this a cost-effective strategy for lead generation if successful.
+
+However, the longer-term results for the companies involved appear to be negative in this specific instance. Miki123211's public post on Hacker News, coupled with direct complaints to the companies, GitHub, and YC Ethics, indicates significant reputational risk and potential backlash. Such practices, especially when perceived as violations of privacy regulations like GDPR, can lead to distrust, public shaming, and even legal repercussions. While the aim was likely to boost user acquisition, the outcome for these companies, at least in this documented case, includes public scrutiny and formal complaints rather than confirmed revenue growth.
+
+## Key Takeaways
+1.  **The Power and Peril of Automation:** Automated tools can significantly scale lead generation and outreach efforts by efficiently processing large datasets like public GitHub activity. However, this power comes with a critical responsibility to respect user privacy and adhere to ethical and legal boundaries.
+2.  **Data Privacy is Paramount:** Relying on publicly available data for targeted marketing without explicit consent, especially for individuals under GDPR jurisdiction, carries significant risks. Businesses must prioritize user consent and transparency in their data collection and usage practices to avoid legal challenges and reputational damage.
+3.  **Reputational Risk of Aggressive Tactics:** While aggressive lead generation might seem effective in the short term, it can quickly backfire. Public forums like Hacker News can amplify user complaints, leading to negative brand perception and potential scrutiny from platforms (like GitHub) and accelerators (like YC).
+4.  **Ethical Lead Generation:** Businesses should explore ethical alternatives for lead generation, such as content marketing, opt-in newsletters, community engagement, or tools that respect user preferences and privacy settings. Automation should augment, not override, ethical considerations.
+5.  **Understanding Regulatory Compliance:** For any business operating globally, a thorough understanding of data protection regulations like GDPR is crucial. Non-compliance can result in hefty fines and a loss of customer trust.
