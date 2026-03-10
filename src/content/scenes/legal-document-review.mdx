@@ -1,0 +1,77 @@
+---
+title: "Legal: Document Drafting & Contract Review"
+titleZh: "法律：文档起草与合同审查自动化"
+type: "scene"
+tool: "openclaw"
+industry: "legal"
+date: "2026-03-04"
+tags: ["legal", "contract-review", "document-drafting", "automation", "guide"]
+---
+
+## Overview
+
+This guide walks you through building an AI-powered legal document drafting and contract review system using OpenClaw. Designed for solo practitioners, small law firms, and in-house legal teams, this solution accelerates first drafts, flags risky clauses, ensures template consistency, and frees up attorney time for high-judgment work like negotiation and litigation strategy.
+
+## Top 5 Skills You Need
+
+- **Knowledge Base Skill** — Store your clause library, contract templates, legal precedents, and firm-specific style guides
+- **PDF Generator Skill** — Produce formatted legal documents, engagement letters, and client-ready contracts
+- **Browser Skill** — Research case law, regulatory updates, and jurisdiction-specific requirements in real time
+- **Email Skill** — Send draft documents for client review and track revision requests
+- **Google Sheets Skill** — Maintain a contract tracker with status, renewal dates, and key obligation deadlines
+
+## Configuration Guide
+
+### Step 1: Build Your Clause and Template Library
+
+Assemble the building blocks for document generation:
+
+- Standard clauses for your practice areas (NDA, MSA, employment, lease)
+- Jurisdiction-specific variations for clauses like governing law and dispute resolution
+- Firm-preferred language for common provisions (indemnification, limitation of liability)
+- Red-flag clause patterns you always want flagged during review
+- Client-specific customizations and negotiation history
+
+### Step 2: Configure the Drafting Workflow
+
+Set up how the AI generates first drafts:
+
+- Intake questionnaire to capture deal terms (parties, dates, amounts, special conditions)
+- Template selection logic based on document type and jurisdiction
+- Variable substitution for party names, dates, dollar amounts, and defined terms
+- Automatic cross-reference checking between sections
+- Output in Word-compatible format for attorney review and redlining
+
+### Step 3: Set Up Contract Review Analysis
+
+Automate the tedious parts of contract review:
+
+- Flag non-standard clauses that deviate from your template library
+- Identify missing standard protections (cap on liability, termination for convenience)
+- Highlight ambiguous language that could create interpretation disputes
+- Compare incoming contracts against your preferred position on key terms
+- Generate a summary sheet of key terms, obligations, and deadlines
+
+### Step 4: Implement Quality Control Checkpoints
+
+Legal work demands accuracy — build in verification:
+
+- Every AI-generated draft must be reviewed by a licensed attorney before sending
+- Maintain an audit log of all changes between AI draft and final version
+- Run conflict-of-interest checks against your client database before new engagements
+- Version control all document iterations with timestamps and editor tags
+
+## Common Pitfalls
+
+- **Never send AI-generated legal documents without attorney review** — The AI drafts, the lawyer approves; this is non-negotiable
+- **Don't rely on AI for jurisdictional nuances** — Laws vary dramatically by state and country; always verify local requirements
+- **Don't train on confidential client data without consent** — Ensure your knowledge base respects privilege and data protection rules
+- **Don't automate court filings** — Procedural rules change frequently and errors can result in sanctions
+- **Don't skip the conflict check** — AI can draft faster than you can catch a conflict of interest; always check first
+
+## Expected Results
+
+- 60-75% reduction in time to produce first drafts of standard contracts
+- 3x more contracts reviewed per week with AI-assisted clause analysis
+- 40% fewer revision cycles through consistent template usage
+- 90%+ catch rate on non-standard or risky clauses during review

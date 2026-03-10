@@ -1,0 +1,78 @@
+---
+title: "HR: Resume Screening & Interview Scheduling"
+titleZh: "人力资源：简历筛选与面试安排自动化"
+type: "scene"
+tool: "openclaw"
+industry: "human-resources"
+date: "2026-03-03"
+tags: ["hr", "recruitment", "resume-screening", "interview-scheduling", "automation", "guide"]
+---
+
+## Overview
+
+This guide explains how to build an automated resume screening and interview scheduling system for HR teams and recruiting agencies using OpenClaw. The system ingests applications from multiple job boards, scores candidates against role requirements, sends personalized status updates, and coordinates interview slots — cutting your time-to-hire dramatically while improving candidate experience.
+
+## Top 5 Skills You Need
+
+- **Email Skill** — Receive applications, send acknowledgment emails, and deliver personalized status updates at each hiring stage
+- **Knowledge Base Skill** — Store job descriptions, scoring rubrics, company culture documents, and interview question banks
+- **Google Sheets Skill** — Maintain a live candidate pipeline tracker with scores, stages, and interviewer assignments
+- **Calendar Skill** — Coordinate interview schedules across multiple interviewers and time zones
+- **PDF Generator Skill** — Create candidate summary packets for hiring managers with extracted resume highlights
+
+## Configuration Guide
+
+### Step 1: Define Your Screening Criteria
+
+Create clear, measurable requirements for each open role:
+
+- Must-have qualifications (degree, certifications, years of experience)
+- Preferred skills weighted by importance to the role
+- Deal-breakers that trigger automatic rejection (e.g., no work authorization)
+- Culture-fit indicators based on past successful hires
+- Scoring rubric that produces a 1-100 candidate score
+
+### Step 2: Build the Application Intake Pipeline
+
+Connect all your candidate sources into one flow:
+
+- Job board integrations (LinkedIn, Indeed, Glassdoor)
+- Career page form submissions on your website
+- Referral submissions from current employees
+- Recruiter-sourced candidates added manually
+- Automatic deduplication for candidates who apply to multiple roles
+
+### Step 3: Automate Screening and Communication
+
+Let the AI handle the volume:
+
+- Parse resumes and extract key data points (skills, experience, education)
+- Score each candidate against the role-specific rubric
+- Send immediate acknowledgment emails upon application receipt
+- Advance top-scoring candidates to interview stage automatically
+- Send respectful rejection emails to candidates below the threshold
+
+### Step 4: Coordinate Interviews Efficiently
+
+Remove the scheduling back-and-forth:
+
+- Pull interviewer availability from connected calendars
+- Offer candidates 3-5 available time slots to choose from
+- Send calendar invites with video call links, interviewer names, and preparation tips
+- Automate reminder emails 24 hours before each interview
+- Collect interviewer feedback via structured forms after each session
+
+## Common Pitfalls
+
+- **Don't rely solely on AI scoring for final decisions** — Use it to filter the top 20%, then have a human review before advancing
+- **Don't screen for protected characteristics** — Audit your rubric to ensure it evaluates skills and qualifications only
+- **Don't ghost rejected candidates** — Automated rejection emails with constructive feedback improve your employer brand
+- **Don't skip the feedback loop** — Track which AI-advanced candidates get hired; retrain your scoring if accuracy drops
+- **Don't over-automate the interview itself** — AI schedules and prepares; humans conduct the actual conversation
+
+## Expected Results
+
+- 80% reduction in time spent on initial resume screening
+- 50% faster time-to-interview from application date
+- 3x more candidates processed per recruiter per week
+- 25% improvement in candidate experience scores through faster communication

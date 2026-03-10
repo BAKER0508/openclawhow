@@ -1,0 +1,33 @@
+---
+title: "Restaurant Chain Automated Ordering, Saving $3K/Month"
+titleZh: "连锁餐厅自动化点餐系统，月省3000美元"
+type: "case"
+tool: "openclaw"
+industry: "food-service"
+income: 3000
+person: "David Okonkwo"
+source: ""
+date: "2026-01-28"
+replicability: 4
+tags: ["restaurant", "ordering-automation", "cost-savings", "food-delivery"]
+---
+
+## Background
+
+David Okonkwo runs a three-location Nigerian restaurant chain called Sahara Kitchen in Houston, Texas. Each location was handling 80-120 delivery orders per day across phone calls, WhatsApp messages, and third-party apps. The phone ordering process was a constant headache: language barriers caused frequent order errors, hold times during dinner rush drove customers away, and he was paying three part-time staff members just to take phone orders across the three locations.
+
+## What He Built
+
+David implemented an OpenClaw-powered ordering system accessible through WhatsApp and his website. The AI agent presents the full menu with photos, handles customization requests (spice level, protein substitutions, combo builds), calculates totals with tax and delivery fees, and confirms orders with an itemized summary before processing. The Knowledge Base Skill stores the complete menu with ingredients and allergen information in both English and Spanish, serving Houston's diverse customer base.
+
+Order confirmations flow directly to each kitchen's display screen via the Google Sheets Skill, which serves as a lightweight order management system. The Notification Skill pings kitchen managers when orders stack up beyond a threshold, and sends customers real-time status updates: order confirmed, preparing, ready for pickup, or out for delivery.
+
+## The Impact
+
+Within the first month, WhatsApp and web ordering captured 65% of total order volume that previously came through phone calls. Order errors dropped from an average of 8 per day across all locations to fewer than 1. David was able to reduce phone-order staffing from three part-time employees to one, saving approximately $3,000/month in labor costs.
+
+Average order value increased 18% because the AI consistently suggests add-ons and combos — something phone staff did inconsistently. Customer complaints about wrong orders fell by 85%. An unexpected benefit was that the order data, now cleanly structured in spreadsheets, gave David clear visibility into which menu items performed best at each location, leading to a menu optimization that further improved margins.
+
+## Key Takeaways
+
+The replicability score is 4 out of 5 because the setup is straightforward and the ROI is clear for any restaurant doing meaningful delivery volume. The critical success factor was David's investment in building a thorough menu database with every customization option and allergen note. He spent two full weekends digitizing the menus and testing edge cases before going live. His advice: "Don't launch until you've tested every item on the menu with at least three weird customization requests."

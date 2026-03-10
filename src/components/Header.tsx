@@ -2,9 +2,17 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function Header() {
   const [search, setSearch] = useState('')
+  const router = useRouter()
+
+  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && search.trim()) {
+      router.push(`/?q=${encodeURIComponent(search.trim())}`)
+    }
+  }
 
   return (
     <header className="bg-primary text-white sticky top-0 z-50">
@@ -21,6 +29,7 @@ export default function Header() {
             placeholder="Search cases & solutions..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleSearch}
             className="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 text-sm focus:outline-none focus:border-teal"
           />
         </div>
@@ -28,6 +37,9 @@ export default function Header() {
         <nav className="flex items-center gap-4 text-sm">
           <Link href="/" className="hover:text-teal transition-colors">
             Cases
+          </Link>
+          <Link href="/tags" className="hover:text-teal transition-colors">
+            Tags
           </Link>
           <Link href="/about" className="hover:text-teal transition-colors">
             About

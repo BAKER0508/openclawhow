@@ -1,0 +1,78 @@
+---
+title: "Healthcare: Appointment Scheduling & Patient FAQ"
+titleZh: "医疗：预约挂号与患者常见问题自动化"
+type: "scene"
+tool: "openclaw"
+industry: "healthcare"
+date: "2026-03-05"
+tags: ["healthcare", "appointment-scheduling", "patient-faq", "automation", "guide"]
+---
+
+## Overview
+
+This guide shows you how to build an automated appointment scheduling and patient FAQ system for clinics, dental offices, and small hospitals using OpenClaw. The system handles appointment booking, rescheduling, cancellations, insurance questions, and pre-visit instructions — reducing front desk workload while improving patient access to care.
+
+## Top 5 Skills You Need
+
+- **Calendar Skill** — Manage doctor availability, book appointments, and handle rescheduling across multiple providers
+- **Knowledge Base Skill** — Store clinic policies, insurance accepted, preparation instructions, and common medical FAQs
+- **WhatsApp Skill** — Communicate with patients on their preferred messaging channel for bookings and reminders
+- **Email Skill** — Send appointment confirmations, pre-visit instructions, and follow-up care summaries
+- **Notification Skill** — Alert staff when urgent cases need triage or when patients require special accommodations
+
+## Configuration Guide
+
+### Step 1: Map Your Provider Availability
+
+Set up accurate scheduling data:
+
+- Each doctor's working hours, lunch breaks, and days off
+- Appointment types and their durations (15-min follow-up, 30-min new patient, 60-min procedure)
+- Buffer time between appointments for cleanup or documentation
+- Holiday schedules and planned vacation blocks
+- Emergency slots reserved for same-day urgent cases
+
+### Step 2: Build the Patient-Facing FAQ
+
+Cover the questions that flood your front desk daily:
+
+- Insurance plans accepted and billing procedures
+- What to bring to a first visit (ID, insurance card, medication list)
+- Preparation instructions for specific procedures (fasting, stopping medications)
+- Parking directions, public transit options, and accessibility info
+- Telehealth availability and how to join virtual appointments
+
+### Step 3: Configure the Booking Flow
+
+Design a smooth scheduling experience:
+
+- Ask for patient type (new or returning) and reason for visit
+- Show available slots filtered by doctor, date preference, and appointment type
+- Collect necessary pre-visit information (symptoms, medication changes)
+- Send instant confirmation with date, time, location, and preparation checklist
+- Schedule automated reminders at 48 hours and 2 hours before the appointment
+
+### Step 4: Set Up Safety Guardrails
+
+Healthcare requires extra caution:
+
+- Never provide medical diagnoses or treatment recommendations
+- Flag emergency symptoms (chest pain, difficulty breathing) with immediate escalation to staff
+- Route complex insurance disputes to billing department
+- Log all patient interactions for compliance and audit purposes
+- Ensure HIPAA-compatible data handling in all integrations
+
+## Common Pitfalls
+
+- **Never let the AI give medical advice** — It books appointments and answers logistics questions only; clinical judgment stays with providers
+- **Don't skip no-show management** — Automate waitlist backfill when cancellations happen; empty slots cost real revenue
+- **Don't ignore time zone issues** — If you serve patients across regions, always confirm time zone during booking
+- **Don't forget language accessibility** — Configure multilingual support if your patient population needs it
+- **Don't underestimate rescheduling volume** — 30-40% of patients reschedule; make this flow as smooth as initial booking
+
+## Expected Results
+
+- 60% reduction in front desk phone call volume
+- 35% decrease in no-show rates through automated reminders
+- Under 30-second average booking time vs. 4-5 minutes by phone
+- 90%+ patient satisfaction with the self-service scheduling experience

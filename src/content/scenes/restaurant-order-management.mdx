@@ -1,0 +1,76 @@
+---
+title: "Restaurant: Ordering & Delivery Automation"
+titleZh: "餐饮：点餐与配送自动化"
+type: "scene"
+tool: "openclaw"
+industry: "food-service"
+date: "2026-03-06"
+tags: ["restaurant", "food-delivery", "ordering", "automation", "guide"]
+---
+
+## Overview
+
+This guide covers how to set up an automated ordering and delivery management system for restaurants using OpenClaw. From taking orders via WhatsApp and web chat, to managing kitchen queues and coordinating delivery drivers, this solution streamlines your entire order-to-delivery pipeline and reduces costly errors.
+
+## Top 5 Skills You Need
+
+- **WhatsApp Skill** — Accept orders directly through WhatsApp with menu browsing and item customization
+- **Knowledge Base Skill** — Store your full menu with prices, ingredients, allergen info, and daily specials
+- **Google Sheets Skill** — Track orders, kitchen queue status, and daily revenue in real-time spreadsheets
+- **Notification Skill** — Alert kitchen staff of new orders and notify customers of order status changes
+- **Maps Skill** — Calculate delivery zones, estimate delivery times, and optimize driver routes
+
+## Configuration Guide
+
+### Step 1: Digitize Your Menu
+
+Create a comprehensive menu database the AI can work with:
+
+- Every item with name, description, price, and category
+- Available customizations (size, spice level, add-ons, dietary swaps)
+- Allergen and dietary labels (gluten-free, vegan, nut-free)
+- Daily specials and limited-time items with date ranges
+- Combo deals and upsell pairings
+
+### Step 2: Build the Ordering Flow
+
+Configure a conversational ordering experience:
+
+- Greet customers and present popular items or daily specials
+- Guide through menu categories with quick-reply buttons
+- Handle customization requests and confirm allergies
+- Calculate totals with tax and delivery fees before confirmation
+- Accept payment via integrated gateway or cash-on-delivery
+
+### Step 3: Connect Kitchen and Delivery Operations
+
+Automate the back-of-house workflow:
+
+- Push confirmed orders to a kitchen display queue with preparation priority
+- Estimate prep time based on current queue length and order complexity
+- Send automatic status updates: confirmed, preparing, ready, out for delivery
+- Assign delivery drivers based on proximity and current route load
+
+### Step 4: Gather Feedback and Optimize
+
+Close the loop with post-delivery automation:
+
+- Send a satisfaction survey 30 minutes after delivery
+- Flag orders with low ratings for manager review
+- Track most-ordered items and peak hours for menu and staffing decisions
+- Identify repeat customers and offer loyalty rewards automatically
+
+## Common Pitfalls
+
+- **Don't skip allergen verification** — Always include a confirmation step for allergen-sensitive orders; liability is real
+- **Don't automate refunds for wrong orders** — Have a manager approve refunds or replacements to prevent abuse
+- **Don't ignore peak hour load** — Test your system under 3x normal volume; Saturday dinner rush will break an untested setup
+- **Don't forget offline fallback** — If the AI system goes down, staff need a manual ordering process ready immediately
+- **Don't over-promise delivery times** — Build in a 5-10 minute buffer; late deliveries hurt more than conservative estimates
+
+## Expected Results
+
+- 85%+ of orders processed without human intervention
+- 40% reduction in order errors compared to phone-based ordering
+- 15-25% increase in average order value through smart upselling
+- 50% fewer customer calls asking about order status
